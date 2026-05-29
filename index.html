@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Valentine Ads</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,#f9d1dc,#e4a4b4);
+      overflow-x:hidden;
+    }
+
+    .container{
+      width:100%;
+      min-height:100vh;
+      padding:20px;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:25px;
+    }
+
+    .logo{
+      color:#c8376c;
+      font-size:30px;
+      font-weight:bold;
+    }
+
+    .menu{
+      display:flex;
+      gap:20px;
+      color:#8f1d46;
+      font-weight:bold;
+    }
+
+    /* HERO */
+    .hero{
+      background:rgba(255,255,255,0.4);
+      border:3px solid #b44d6d;
+      border-radius:25px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .hero h1{
+      font-size:75px;
+      color:#a31345;
+      letter-spacing:2px;
+      text-shadow:3px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .hero h2{
+      color:#7a1e3d;
+      font-size:35px;
+      margin-top:10px;
+    }
+
+    .ads{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:40px;
+      margin-top:50px;
+    }
+
+    .card{
+      width:330px;
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 15px 25px rgba(0,0,0,0.2);
+      transition:0.4s;
+      animation:float 4s infinite ease-in-out;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.03);
+    }
+
+    .badge{
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:#8f1d46;
+      color:white;
+      padding:10px 18px;
+      border-radius:20px;
+      font-weight:bold;
+      z-index:2;
+    }
+
+    .card img{
+      width:100%;
+      height:430px;
+      object-fit:cover;
+    }
+
+    .content{
+      padding:20px;
+      text-align:center;
+    }
+
+    .content h3{
+      color:#8f1d46;
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .price{
+      display:inline-block;
+      background:#f7d3dc;
+      color:#8f1d46;
+      padding:10px 20px;
+      border-radius:20px;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      position:relative;
+      padding:14px 30px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(45deg,#ff2e75,#a31345);
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      overflow:hidden;
+      transition:0.4s;
+      box-shadow:0 5px 15px rgba(163,19,69,0.4);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      box-shadow:0 10px 20px rgba(163,19,69,0.5);
+    }
+
+    .btn::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:rgba(255,255,255,0.3);
+      transition:0.5s;
+    }
+
+    .btn:hover::before{
+      left:100%;
+    }
+
+    .popup{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) scale(0);
+      background:white;
+      padding:35px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 15px 30px rgba(0,0,0,0.3);
+      transition:0.4s;
+      z-index:999;
+    }
+
+    .popup.active{
+      transform:translate(-50%,-50%) scale(1);
+    }
+
+    .popup h2{
+      color:#a31345;
+      margin-bottom:15px;
+      font-size:30px;
+    }
+
+    .popup p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .close-btn{
+      padding:12px 25px;
+      border:none;
+      border-radius:30px;
+      background:#a31345;
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    
+     float{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    (max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .hero h2{
+        font-size:22px;
+      }
+
+      .card{
+        width:95%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="navbar">
+
+      <div class="logo">
+        Aura Shop
+      </div>
+
+      <div class="menu">
+        <div>HOME</div>
+        <div>SHOP</div>
+        <div>HELP</div>
+      </div>
+
+    </div>
+
+    <div class="hero">
+
+      <h1>AURA FIANA SHOP</h1>
+
+      <h2>MUST HAVES</h2>
+
+    </div>
+
+    <div class="ads">
+
+      <!-- CARD 1 -->
+      <div class="card">
+
+        <div class="badge">
+          NEW
+        </div>
+
+        <img src="summer top, girlish top, pink floral top.jpg" alt="fashion">
+
+        <div class="content">
+
+          <h3>Dress Korean Style</h3>
+
+          <div class="price">
+            IDR 100.000
+          </div>
+
+          <br>
+
+          <button class="btn" onclick="showPopup()">
+            🛍 Beli Sekarang
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+
+        <div class="badge">
+          HOT
+        </div>
+
+        <img src="GORGLITTER Women's Cute Bow Cardigan Sweater Long….jpg" alt="Fashion">
+
+        <div class="content">
+
+          <h3>Knitt-Cardigan Cute Girl</h3>
+
+          <div class="price">
+            IDR 85.000
+          </div>
+
+          <br>
+
+          <button class="btn" onclick="showPopup()">
+            Lihat Promo
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="popup" id="popup">
+
+    <h2>Mei Sell </h2>
+
+    <p>
+      Dapatkan diskon hingga 45% khusus hari ini!
+    </p>
+
+    <button class="close-btn" onclick="closePopup()">
+      Tutup
+    </button>
+
+  </div>
+
+  <script>
+
+    function showPopup(){
+      document.getElementById("popup").classList.add("active");
+    }
+
+    function closePopup(){
+      document.getElementById("popup").classList.remove("active");
+    }
+
+    const title = document.querySelector(".hero h1");
+
+    setInterval(() => {
+
+      title.style.transform = "scale(1.05)";
+
+      setTimeout(() => {
+        title.style.transform = "scale(1)";
+      }, 500);
+
+    }, 2000);
+
+  </script>
+
+</body>
+</html>
